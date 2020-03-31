@@ -214,79 +214,8 @@ a2a_config.templates.email = {
 	div.fancybox-caption p.caption-title{font-size:14px}
 	div.fancybox-caption p.caption-title{color:#333333}
 	div.fancybox-caption {color:#333333}div.fancybox-caption p.caption-title {background:#fff; width:auto;padding:10px 30px;}div.fancybox-content p.caption-title{color:#333333;margin: 0;padding: 5px 0;}
-</style><script type="text/javascript">
-	jQuery(function(){
-
-		jQuery.fn.getTitle = function() { // Copy the title of every IMG tag and add it to its parent A so that fancybox can show titles
-			var arr = jQuery("a[data-fancybox]");
-									jQuery.each(arr, function() {
-										var title = jQuery(this).children("img").attr("title");
-										 var caption = jQuery(this).next("figcaption").html();
-                                        if(caption && title){jQuery(this).attr("title",title+" " + caption)}else if(title){ jQuery(this).attr("title",title);}else if(caption){jQuery(this).attr("title",caption);}
-									});			}
-
-		// Supported file extensions
-
-                var thumbnails = jQuery("a:has(img)").not(".nolightbox").not('.envira-gallery-link').not('.ngg-simplelightbox').filter(function () {
-            return /\.(jpe?g|png|gif|mp4|webp|bmp|pdf)(\?[^/]*)*$/i.test(jQuery(this).attr('href'))
-        });
-        
-
-		// Add data-type iframe for links that are not images or videos.
-        var iframeLinks = jQuery('.fancyboxforwp').filter( function() { return ! /\.(jpe?g|png|gif|mp4|webp|bmp|pdf)(\?[^/]*)*$/i.test(jQuery(this).attr('href')) }).filter( function() { return ! /vimeo|youtube/i.test(jQuery(this).attr('href')) });
-        iframeLinks.attr({ "data-type" : "iframe" }).getTitle();
-
-				// Gallery All
-		thumbnails.addClass("fancyboxforwp").attr("data-fancybox","gallery").getTitle();
-        iframeLinks.attr({ "data-fancybox":"gallery" }).getTitle();
-
-		// Gallery type NONE
-		
-
-
-		// Call fancybox and apply it on any link with a rel atribute that starts with "fancybox", with the options set on the admin panel
-		jQuery("a.fancyboxforwp").fancyboxforwp({
-			loop: false,
-			smallBtn: true,
-			zoomOpacity: "auto",
-			animationEffect: "fade",
-			animationDuration: 500,
-			transitionEffect: "fade",
-			transitionDuration : "300",
-			overlayShow: true,
-			overlayOpacity: "0.3",
-			titleShow: true,
-			titlePosition: "inside",
-			keyboard: true,
-			showCloseButton: true,
-			arrows: true,
-			clickContent: false,
-            clickSlide: "close",
-            mobile:{
-                clickContent: function(current, event) {
-                    return current.type === "image" ? "toggleControls" : false;
-                },
-                clickSlide: function(current, event) {
-                    return current.type === "image" ? "close" : "close";
-                },
-            },
-			wheel: false,
-			toolbar: true,
-			preventCaptionOverlap: true,
-			onInit: function() { },			onDeactivate: function() { },			beforeClose: function() { },			afterShow: function() { },			afterClose: function() { },			caption : function( instance, item ) {var testing = jQuery(this).context.title;var caption = jQuery(this).data('caption') || '';if ( item.type === 'image' && testing.length ) {caption = (caption.length ? caption + '<br />' : '') + '<p class="caption-title">'+testing+'</p>' ;}return caption;},
-			afterLoad : function( instance, current ) {current.$content.append('<div class=\"fancybox-custom-caption inside-caption\" style=\" position: absolute;left:0;right:0;color:#000;margin:0 auto;bottom:0;text-align:center;background-color:#FFFFFF \">' + current.opts.caption + '</div>');},
-					});
-		
-	})
-</script>
+</style>
 <!-- END Fancybox for WordPress -->
-<script type="text/javascript">
-jQuery(document).ready(function($) { 
-$('#conf-tabs').tabs();
-});
-
-
-</script>
 <style type="text/css">
 .ui-widget {
 font-family: inherit;
@@ -746,20 +675,6 @@ L'UPR veut mettre un coup d'arrêt définitif à l'abandon systématique de tous
 		<style type="text/css">/** Mega Menu CSS: fs **/</style>
 
 <!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n; n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,  document,'script','//connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1646112412320069');
-fbq('track', "PageView");</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1646112412320069&ev=PageView&noscript=1"  /></noscript>
-<!-- End Facebook Pixel Code -->
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MMFL8F2');</script>
 <!-- End Google Tag Manager -->
 
 </head>
@@ -1295,8 +1210,8 @@ Afin de respecter les consignes gouvernementales de confinement, notre boutique 
             </div>
         </div>
         <div id="conf-tabs" class="container container-tabs">
-            <div class="container">
-                <div style="width:750px; margin: 0 auto;">
+            <div class="container" >
+                <div style="width:750px; margin: 0 auto;" id="div_une">
                 <ul id="ul_une">
                     <li><a href="#tabs-1">&Agrave; la une<span id="fl_tout" class="picto_une"></span></a></li>
                     <li><a href="#tabs-2">Actualités<span id="fl_ac" class="picto_une"></span></a></li>
@@ -1989,9 +1904,9 @@ Afin de respecter les consignes gouvernementales de confinement, notre boutique 
         <div class="container">
 
             <span class="bord_g"></span><h3>L'UPR en chiffres</h3><span class="bord_d"></span>
-
             <div id="chiffre">
-
+                <h1>Les chiffres</h1>
+                <ul><li>my new ul</li></ul>
                 <ul id="ul_chiffre">
                                         <li id="il_ch1"><span id="rouge_1"><span class='ajaxNbAdh' data-url='/wp-content/plugins/uprcron/nb.php'></span></span><span id="sp_1">Nombre d’adhérents</span></li>
                     <li id="il_ch2"><span id="sp_2">Âge moyen des adhérents</span><span id="rouge_2">42 ans</span></li>
@@ -2016,7 +1931,7 @@ Afin de respecter les consignes gouvernementales de confinement, notre boutique 
                                         </h3>
                                     </div>
                                     <div id="cont1" class="cont butt1 active-elt">
-                                        <p class="p-img"><img alt="euro" src="images/euro.png" height='50px'></p><p class="p-text">L’euro ruine notre pouvoir d’achat, entretient le chômage, plombe nos entreprises, et accélère les délocalisations.
+                                        <p class="p-img"></p><p class="p-text">L’euro ruine notre pouvoir d’achat, entretient le chômage, plombe nos entreprises, et accélère les délocalisations.
                                             Rétablir le franc, c’est évidemment possible, et c’est indispensable !</p>
                                     </div>
                                     <div class="sol-butt clearfix">
@@ -2210,7 +2125,6 @@ var wpcf7 = {"apiSettings":{"root":"https:\/\/www.upr.fr\/wp-json\/contact-form-
 <script type='text/javascript' src='https://www.upr.fr/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
 <script type='text/javascript' src='https://www.upr.fr/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
 <script type='text/javascript' src='https://www.upr.fr/wp-includes/js/jquery/ui/accordion.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://www.upr.fr/wp-includes/js/jquery/ui/tabs.min.js?ver=1.11.4'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var tCountAjax = {"ajaxurl":"https:\/\/www.upr.fr\/wp-admin\/admin-ajax.php","api_nonce":"7eb285cb1b","api_url":"https:\/\/www.upr.fr\/wp-json\/tminus\/v1\/","countdownNonce":"00eea4dc53","tminusnow":"{\"now\":\"3\\\/27\\\/2020 23:32:51\"}"};
@@ -2247,7 +2161,8 @@ var megamenu = {"timeout":"300","interval":"100"};
 <script type='text/javascript' src='https://www.upr.fr/wp-content/plugins/megamenu/js/maxmegamenu.js?ver=2.7.4'></script>
 <script type='text/javascript' src='https://www.upr.fr/wp-content/plugins/the-events-calendar-category-colors/src/resources/legend-superpowers.js?ver=6.4.9'></script>
 <script type='text/javascript' src='https://www.upr.fr/wp-includes/js/wp-embed.min.js?ver=c90398d5813886ce79bf010b3f47cb69'></script>
-<script type="text/javascript">
+<script type="text/javascript"></script>
+<script type="text/javascript" src="filters.js">
 ( function( grecaptcha, sitekey, actions ) {
 
 	var wpcf7recaptcha = {
