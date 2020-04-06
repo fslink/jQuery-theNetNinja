@@ -7,4 +7,10 @@
 // $('#chiffre').parents().css({border: '3px solid pink'});
 
 //children
-$('#chiffre').children().css({border: '3px solid blue'});
+// $('#chiffre').children().css({border: '3px solid blue'});
+
+// find
+// $('#chiffre').find('#ul_chiffre').css({border: '4px solid red'});
+
+// closest
+$('#chiffre').closest('.container').css({border: '4px solid red'});
