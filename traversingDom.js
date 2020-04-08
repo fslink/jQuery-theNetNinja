@@ -13,4 +13,8 @@
 // $('#chiffre').find('#ul_chiffre').css({border: '4px solid red'});
 
 // closest
-$('#chiffre').closest('.container').css({border: '4px solid red'});
+// $('#chiffre').closest('.container').css({border: '4px solid red'});
+
+$('#chiffre ul:first').css({border: '2px solid red'})
+    .next().css({border: '2px solid blue'})
+    .closest('#ul_chiffre').css({border: '2px solid black'});
