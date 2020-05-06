@@ -1,16 +1,23 @@
-// const tweet = '<div style="margin: 20px;'  
-// + 'padding: 10px; background: #eee">'
-// + 'The big fight live: Ham Vs Cheese !'
-// + '</div>';
+// $('div.home-img').unwrap();
+// $('div.home-img').wrap('<div style="text-align:center;" id="img-container">');
+// $('div.home-img').wrapAll('<div style="text-align:center;" id="img-container">');
 
-// const tweetText = 'The big fight live: Ham Vs Cheese !';
+var wrapper = '<div style="text-align:center;"></div>';
+var button = $('div#wrap-btn');
+var target = $('#img-container');
+var wrapped = true;
 
-//$('ul#ul_chiffre').append(tweet);
-// $('ul#ul_chiffre').prepend(tweet);
-// $('ul#ul_chiffre').before(tweet);
-// $('ul#ul_chiffre').parent().html(tweet);
-// $('ul#ul_chiffre').children().text(tweetText);
+console.log(target);
 
-$('ul.chiffre').wrap('<div>');
-$('ul.chiffre').unwrap();
-$('ul.chiffre').wrapAll('<div id="motherfucker">');
+button[0].addEventListener('click', () => {
+    if(wrapped){
+        target.unwrap();
+        wrapped = false;
+        button.text('Wrap');
+
+    } else {
+        target.wrapAll(wrapper);
+        wrapped = true;
+        button.text('Unwrap');
+    }
+})
